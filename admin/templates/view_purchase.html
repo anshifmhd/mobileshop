@@ -1,0 +1,49 @@
+{% extends 'index_admin.html' %}
+{% block content %}
+
+
+<style>
+    button{
+        background-color: red;
+    }
+</style>
+
+<div class="body" align="center">
+    <form action="">
+        {% csrf_token %}
+        <br><br><br><br>
+        <table border="2px solid black">
+            <tr>
+                <th>CUSTOMER NAME </th>
+                <th>MODEL NAME</th>
+                <th>BRAND</th>
+                <th>PRICE</th>
+                <th>CUSTOMER ADDRESS</th>
+                <th>CUSTOMER PINCODE</th>
+
+            </tr>
+            {% for d in data %}
+            <tr>
+                <td>{{d.customer.name}}</td>
+                <td>{{d.product.model_name}}</td>
+                <td>{{d.product.brand}}</td>
+                <td>{{d.product.price}}</td>
+                <td>{{d.customer.address}}}</td>
+                <td>{{d.customer.pincode}}</td>
+                <td><button>Update</button></td>
+                <td><button>Delete</button></td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}

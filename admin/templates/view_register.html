@@ -1,0 +1,44 @@
+{% extends 'index_admin.html' %}
+{% block content %}
+
+
+<style>
+    button{
+        background-color: red;
+    }
+</style>
+
+<div class="body" align="center">
+    
+        <table border="2px solid black">
+            <tr>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>CONTACT</th>
+                <th>ADDRESS</th>
+                <th>PINCODE</th>
+            </tr>
+            {% for d in mobiles %}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.email}}</td>
+                <td>{{d.contact}}</td>
+                <td>{{d.address}}</td>
+                <td>{{d.pincode}}</td>
+                <td><button>Update</button></td>
+                <td><button>Delete</button></td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}

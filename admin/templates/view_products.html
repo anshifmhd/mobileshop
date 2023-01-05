@@ -1,0 +1,45 @@
+{% extends 'index_admin.html' %}
+{% block content %}
+
+
+<style>
+    button{
+        background-color: red;
+    }
+</style>
+
+<div class="body" align="center">
+    <form action="">
+        {% csrf_token %}
+        <table border="2px solid black">
+            <tr>
+                <th>PRODUCT ID</th>
+                <th>MODEL NAME</th>
+                <th>BRAND</th>
+                <th>PRICE</th>
+                <th>IMAGE</th>
+            </tr>
+            {% for d in mobiles %}
+            <tr>
+                <td>{{d.id}}</td>
+                <td>{{d.model_name}}</td>
+                <td>{{d.brand}}</td>
+                <td>{{d.price}}</td>
+                <td><img style="width: 100px; height: 100px;" src="{{d.image.url}}" alt=""></td>
+                <td><button>Update</button></td>
+                <td><button>Delete</button></td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}

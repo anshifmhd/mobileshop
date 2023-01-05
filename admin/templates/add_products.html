@@ -1,0 +1,51 @@
+{% extends 'index_admin.html' %}
+{% block content %}
+
+
+<div class="body">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <h1>register</h1>
+            <hr>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-25"><label for="">Model name</label></div>
+                    <div class="col-75"><input type="text" name="model_name" id="name" required></div>
+                </div>
+                <div class="row">
+                    <div class="col-25"><label for="">brand</label></div>
+                    <div class="col-75"><input type="text" name="brand" id="" required></div>
+                </div>
+                <div class="row">
+                    <div class="col-25"><label for="">price</label></div>
+                    <div class="col-75"><input type="text" name="price" id="" required></div>
+                </div>
+                <div class="row">
+                    <div class="col-25"><label for="">Image</label></div>
+                    <div class="col-75"><input type="file" placeholder="select photo" name="image"></div>
+                </div>
+                
+                <div class="row">
+                    <input type="submit" value="Add mobile" id="">
+                </div>
+            </form>
+
+            <br><br><br><br>
+
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
